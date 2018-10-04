@@ -76,3 +76,16 @@ python RealTimeShow.py
 
 3. If you can see a dynamic figure like this, congratulations!(Please try moving or rotating the magnetometer array to observe the curve)
 ![RealTimeShow_Example](RealTimeShow_Example.png)
+
+Explanation:
+   - There are 11 windows, 10 around for magnetometers, 1 in middle for motion sensors.
+   - In each magetometer window, there are 3 lines, **Blue for X-axis** data, **Orange for Y-axis** data, **Green for Z-axis** data.
+   - In motion-sensor window, there would be 6 lines, 3 for accelermeter, 3 for gyroscope.
+   - The range of vertical axis will change automatically with the max and min value of the data so that you can watch it elegantly.
+   - The range of horizontal axis will change periodically to subsitute new data for old data.
+   
+Possible problem:
+   - All three lines of a magnetometer may keep constant(0/+-1024/+-2048). Solution: **Check the connection between embedded board and magnetometer array**.
+   - Some lines or data may be unstable and change dramatically. Solution: The same as above.
+   - All lines become frozen suddenly. Solution: **Close the figure, re-connect embedded board, and try again**.
+   - Only one of the line of a magnetometer keeps constant. That's the worst case. Probably your sensor chip has some problem. Unfortunately, there is no good solution until now but changing chip.
