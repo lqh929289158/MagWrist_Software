@@ -89,3 +89,11 @@ Possible problem:
    - Some lines or data may be unstable and change dramatically. Solution: The same as above.
    - All lines become frozen suddenly. Solution: **Close the figure, re-connect embedded board, and try again**.
    - _**Only one of the line of a magnetometer keeps constant**_. That's the worst case. Probably your sensor chip has some problem. Unfortunately, there is no good solution until now but changing chip.
+   
+## Continue with RealTimeShow_Relative.py NEXT!
+
+If you run this program, you can get a dynamic figure that will show you the relative value of 9 magnetometers to the other one(reference magnetometer).
+
+We call the reference magnetometer **pivot**. 
+
+
