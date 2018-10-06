@@ -57,6 +57,8 @@ Execute the commmand above again. Please find out the new added port name.
 
 This is a Real-time program that can plot the data of 10 magnetometers and 1 motion sensor vividly!
 
+To run the program, please follow the steps below:
+
 1. Modify port name. Open **RealTimeShow.py** with the editor you prefer. Find the code below:
 ```
 ser = serial.Serial('/dev/cu.usbmodem0F00577F',1500000)
@@ -92,8 +94,17 @@ Possible problem:
    
 ## Continue with RealTimeShow_Relative.py NEXT!
 
-If you run this program, you can get a dynamic figure that will show you the relative value of 9 magnetometers to the other one(reference magnetometer).
+If you run this program, you can get a dynamic figure that will show you the relative value of 9 magnetometers to the other one(reference magnetometer), which means the substraction of each axis of each magenetomer to the corresponding axis of the reference magnetometer. We call the reference magnetometer **pivot**. 
 
-We call the reference magnetometer **pivot**. 
+To run the program, please follow the steps below:
 
+1. Modify port name. Refer to [the title before](start-with-realtimeshowpy-first)
 
+2. Modify pivot number as you want. In the editor, search `pivot =` and you will get a line of code like `pivot = 3`. The number means which magnetometer you choose as a reference one. You can refer to the [image](https://raw.githubusercontent.com/lqh929289158/MagWrist_Hardware/master/Figures/MagArray.JPG) for the map of sensors.
+
+3. Open **Teriminal** and locate to the repository. Execute the command below:
+
+(For MacOS, replace `python` with `python3`)
+```
+python RealTimeShow_Relative.py
+```
