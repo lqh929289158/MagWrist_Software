@@ -98,7 +98,7 @@ If you run this program, you can get a dynamic figure that will show you the rel
 
 To run the program, please follow the steps below:
 
-1. Modify port name. Refer to [the title before](start-with-realtimeshowpy-first)
+1. Modify port name. Refer to [the title before](#start-with-realtimeshowpy-first)
 
 2. Modify pivot number as you want. In the editor, search `pivot =` and you will get a line of code like `pivot = 3`. The number means which magnetometer you choose as a reference one. You can refer to the [image](https://raw.githubusercontent.com/lqh929289158/MagWrist_Hardware/master/Figures/MagArray.JPG) for the map of sensors.
 
