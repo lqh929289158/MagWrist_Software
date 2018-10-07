@@ -108,3 +108,83 @@ To run the program, please follow the steps below:
 ```
 python RealTimeShow_Relative.py
 ```
+
+## Find the sensitive area of each finger.
+
+This part we use two programs:
+
+- **Magnets_Permutation.py**
+- **plot_data.py**
+
+### Magnets_Permutation.py (Data collection)
+
+Please follow the instructions below:
+
+1. Decide how to grid your wrist, in another word, how many rows, how many columns. e.g. row:4 col:9.
+2. Decide how many vectors you want to sample for each finger(Must be a number that can be divided by 5). e.g. 10.
+3. Open **Magnets_Permutation.py** and skip the function definition part and you will find three assignment.
+```
+batch = 5
+row_num = 4
+col_num = 9
+```
+The `batch` is how many vectors you want to sample for each finger. Modify it as you want but **_It must be a number that can be divided by 5_**.
+
+Modify the `row_num` and the `col_num` too.
+
+4. Modify port name. Refer to [the title before](#start-with-realtimeshowpy-first)
+
+5. Choose one of your hand. e.g. left.  Direct the inner side of your wrist to your face. Draw the grid on you wrist as below.
+
+ 8  | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 | .
+--- | - | - | - | - | - | - | - | - | -
+- | - | - | - | - | - | - | - | - | 0
+- | - | - | - | - | - | - | - | - | 1
+- | - | - | - | - | - | - | - | - | 2
+- | - | - | - | - | - | - | - | - | 3
+
+Yes! The column number is from right to left(Very strange but that\`s it).
+
+6. Put a magnet on postion 00(row 0 col 0). And run the program as:
+
+(For MacOS, replace `python` with `python3`)
+```
+python Magnets_Permutation.py lqh
+```
+Yes! There is a main argument. You can modify it as your name or whatever you want but you have to know that the argument you input will be a part of the name of the output file.
+
+7. Follow the instructions in the program. The sequence of magnet position is 01, 02, 03,..., 08, 10, 11,..., 18,..., 38.
+8. If you follow the instructions in the program correctly, then you will get a _txt_ file named like **finger_vectors_file_xxx.txt** in the folder.
+
+### plot_data.py (Visualization)
+
+Please follow the instructions below:
+
+1. Modify the input file name(The file you got just now). Open **plot_data.py** and search `f = open`. You will find a line of code:
+```
+f = open('finger_vectors_file_yifeng.txt','r')
+```
+Change the first parameter to the file name you get `finger_vectors_file_xxx.txt`.
+
+2. Modify the configuration of output figure.Search `fig = draw_power_for_each_finger` and you will find a line of code:
+```
+fig = draw_power_for_each_finger(single,interpol='bilinear',norm='off')
+```
+You can change the interpolation to None as this:
+```
+fig = draw_power_for_each_finger(single,interpol=None,norm='off')
+```
+Or you can use other interpolation as this:
+```
+fig = draw_power_for_each_finger(single,interpol='nearest',norm='off')
+```
+
+3. If you want to use **Normalization**(which means that the 5 subplot for 5 fingers will use the same color-bar range), modify the `norm` parameter to `'on'`. Then, search `norm_min = ` and you will find two assignment. Modify the Max and Min for the normalization.
+
+4. Run the program.
+
+(For MacOS, replace `python` with `python3`)
+```
+python plot_data.py
+```
+
