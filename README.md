@@ -211,3 +211,26 @@ fig = draw_power_for_each_finger(single,interpol='nearest',norm='off')
 python plot_data.py
 ```
 
+## Collect data for Machine Learning!
+
+Huh, maybe you have determined magnet-deployment. Then, fix Mag-Array and magnets(on wristband) on your wrist and ready to collect data. You can use either **MultiFinger_Robust_Rotation.py** or **MutiFinger_Backup.py** to log data.
+
+### Data structure illustration
+
+- The program will ignore the data of motion sensor. If you have any idea to take advantage of it, please modify the program or write a new program by yourself.
+- We define a **_vector_** as 30 axes of all magnetometers. Look like this 
+```
+[sensor0_X, sensor0_Y, sensor0_Z, sensor1_X, sensor1_Y, sensor1_Z, ... , sensor9_X, sensor9_Y, sensor9_Z]
+```
+- Of course, a vector has a length of **30**.
+- We define a **_null vector_** as the vector you collect when you bend no finger.
+- We define a **_finger vector_** as the vector you collect when you bend one or more finger(s).
+- We define a **_batch_** as how many vectors you collect for each gesture or finger.
+- The data collection contains three main parts.**Calibration**, **Single-Finger**, **Multi-Finger**.
+   - Calibration: 2-D Array with size **N x 30**. N depends on the time you spend on collecting.
+   - Single-Finger: Collect **_batch/5_** **null vectors**, **_batch_** **index finger vectors**, **_batch/5_** **null vectors**,**_batch_** **middle finger vectors**, **_batch/5_** **null vectors**, **_batch_** **ring finger vectors**, **_batch/5_** **null vectors**, **_batch_** **little finger vectors**, **_batch/5_** **null vectors**, **_batch_** **thumb vectors**.(Image illustration here) Output format:
+   - Multi-Finger:(Image illustration here) Output format.
+
+### MultiFinger_Robust_Rotation.py
+
+### MultiFinger_Backup.py
