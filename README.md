@@ -70,7 +70,11 @@ X_Axis_Data Y_Axis_Data Z_Axis_Data 9
 /* MPU9250 Part */
 Acc_X Acc_Y Acc_Z Gyr_X Gyr_Y Gyr_Z  0
 ```
-That means you have to read 11 lines to get all sensors' data.
+That means you have to read 11 lines to get all sensors' data. 
+
+For the first 10 lines, which are data of magnetometers, the number in the end of the line is the number of the magnetometer shown [here](https://raw.githubusercontent.com/lqh929289158/MagWrist_Hardware/master/Figures/MagArray.JPG).
+
+For the last line, which is data of motion sensor, the number in the end of the line is just the number of I2C master. No need to cara about it.
 
 ## Start with RealTimeShow.py First!
 
