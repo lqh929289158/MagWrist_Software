@@ -14,8 +14,13 @@ The software part is based on Python. If you are not familiar with it, please le
 
 This repository contains many files, which are almost independent on each other.
 
-- RealTimeShow.py
-- RealTimeShow_Relative.py
+- RealTimeShow.py  (Real-Time show the data of 10 magnetometers and 1 motion sensor as their physical postion)
+- RealTimeShow_Relative.py (Choose a pivot. Show the relative value of each magnetometer to the pivot)
+- Magnets_Permutation.py (Collect data when magnet is put on different area on your wrist)
+- plot_data.py (Use the TXT file output by Magnets_Permutation.py and visualize the sensitive area for each finger)
+- MultiFinger_Robust_Rotation.py (Collect Calibration&Single-Finger&Multi-Finger data)
+- PCA_Display.py (Visualize the data on 2-D space after PCA)
+- PCA_Display_Lib.py (The library of PCA_Display.py)
 
 ## Python Environment
 
@@ -52,6 +57,20 @@ Then, connect the embedded board to your PC by a microUSB-USB or microUSB-USB(Ty
 Execute the commmand above again. Please find out the new added port name.
 - For MacOS: The port name format looks like this _/dev/cu.usbmodem0F00577F_
 - For Win: The port name format looks like this _COM1_
+
+## Recall the data format loaded from serial port
+```
+/* HMC5983 Part */
+X_Axis_Data Y_Axis_Data Z_Axis_Data 0
+X_Axis_Data Y_Axis_Data Z_Axis_Data 1
+X_Axis_Data Y_Axis_Data Z_Axis_Data 2
+X_Axis_Data Y_Axis_Data Z_Axis_Data 3
+...
+X_Axis_Data Y_Axis_Data Z_Axis_Data 9
+/* MPU9250 Part */
+Acc_X Acc_Y Acc_Z Gyr_X Gyr_Y Gyr_Z  0
+```
+That means you have to read 11 lines to get all sensors' data.
 
 ## Start with RealTimeShow.py First!
 
