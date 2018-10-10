@@ -234,4 +234,19 @@ Huh, maybe you have determined magnet-deployment. Then, fix Mag-Array and magnet
 
 ### MultiFinger_Robust_Rotation.py
 
+Please follow the instructions below:
+
+1. Open **MultiFinger_Robust_Rotation.py** with editor. Skip all definitions of functions and you will find two assignments. One of them is **batch**. Change it as you want.
+
+2. Modify port name. Refer to [the title before](#start-with-realtimeshowpy-first)
+
+3. Open **Terminal** and locate to your folder. Run the command like below:
+
+(For MacOS, replace `python` with `python3`)
+```
+python MultiFinger_Robust_Rotation.py lqh 1
+```
+   - Parameter 1: Volunteer name. You can use your name's abbreviation like `lqh`.
+   - Parameter 2: Position name. This is used to log your pose. You can use `pos1 pos2 pos3` or `1 2 3` and so on.
+
 ### MultiFinger_Backup.py
