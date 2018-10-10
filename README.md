@@ -226,10 +226,11 @@ Huh, maybe you have determined magnet-deployment. Then, fix Mag-Array and magnet
 - We define a **_null vector_** as the vector you collect when you bend no finger.
 - We define a **_finger vector_** as the vector you collect when you bend one or more finger(s).
 - We define a **_batch_** as how many vectors you collect for each gesture or finger.
+- We define **K** as how many gestures you want to recognize. Default: 32(All combinations of your fingers).
 - The data collection contains three main parts.**Calibration**, **Single-Finger**, **Multi-Finger**.
    - Calibration: 2-D Array with size **N x 30**. N depends on the time you spend on collecting.
-   - Single-Finger: Collect **_batch/5_** **null vectors**, **_batch_** **index finger vectors**, **_batch/5_** **null vectors**,**_batch_** **middle finger vectors**, **_batch/5_** **null vectors**, **_batch_** **ring finger vectors**, **_batch/5_** **null vectors**, **_batch_** **little finger vectors**, **_batch/5_** **null vectors**, **_batch_** **thumb vectors**.(Image illustration here) Output format:
-   - Multi-Finger:(Image illustration here) Output format.
+   - Single-Finger: Collect **_batch/5_** **null vectors**, **_batch_** **index finger vectors**, **_batch/5_** **null vectors**,**_batch_** **middle finger vectors**, **_batch/5_** **null vectors**, **_batch_** **ring finger vectors**, **_batch/5_** **null vectors**, **_batch_** **little finger vectors**, **_batch/5_** **null vectors**, **_batch_** **thumb vectors**.![Single Finger Illustration](Single-Finger_Illustration.jpg) Output format: **6 x batch x 30**
+   - Multi-Finger:![Multiple Finger Illustration](Multi-Finger_Illustration.jpg) Output format: **K x batch/5** and **K x batch x 30**.
 
 ### MultiFinger_Robust_Rotation.py
 
