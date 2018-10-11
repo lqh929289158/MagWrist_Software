@@ -248,5 +248,9 @@ python MultiFinger_Robust_Rotation.py lqh 1
 ```
    - Parameter 1: Volunteer name. You can use your name's abbreviation like `lqh`.
    - Parameter 2: Position name. This is used to log your pose. You can use `pos1 pos2 pos3` or `1 2 3` and so on.
-
+4. Find 4 output files. To use this files, you can refer to [data format](#data-structure-illustration).
+   - **lqh_1_calibration.npy**
+   - **lqh_1_single.npy**
+   - **lqh_1_null_multiple.npy**
+   - **lqh_1_multiple.npy**
 ### MultiFinger_Backup.py
